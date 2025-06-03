@@ -2,192 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEEDS&NUTS | Strong by Nature</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seeds & Nuts</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #1a1a1a;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefef8;
+      color: #333;
     }
+
     header {
-      background: #fff;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+
+    header .logo {
+      font-weight: bold;
+      color: #1d7a3c;
+      font-size: 1.2em;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-      margin: 0.5rem 0;
-    }
-    .cta-buttons {
-      margin-top: 1.5rem;
-    }
-    .cta-buttons a, .add-to-cart, .checkout-button {
-      text-decoration: none;
-      background: #1a1a1a;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      margin: 0.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      display: inline-block;
-      cursor: pointer;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 960px;
-      margin: auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    section p {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.6;
-    }
-    .footer {
-      background: #1a1a1a;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-    }
-    .footer a {
-      color: #fff;
-      margin: 0 1rem;
+
+    nav a {
+      margin: 0 15px;
+      color: #333;
       text-decoration: none;
       font-weight: 500;
     }
-    .footer p {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #ccc;
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
     }
-    .cart {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 200px;
-      display: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .hero-text {
+      max-width: 500px;
     }
-    .cart.visible {
-      display: block;
+
+    .hero-text h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #1d7a3c;
     }
-    .cart h3 {
-      margin-top: 0;
+
+    .hero-text h1 span {
+      color: #f68c1f;
+    }
+
+    .hero-text p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .buttons a {
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .shop-btn {
+      background-color: #1d7a3c;
+      color: white;
+    }
+
+    .learn-btn {
+      border: 2px solid #1d7a3c;
+      color: #1d7a3c;
+      background: transparent;
+    }
+
+    .hero-image {
+      max-width: 300px;
+    }
+
+    .section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      color: #1d7a3c;
+      font-size: 2em;
+    }
+
+    .section p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Strong by Nature.</h1>
-    <p>10g protein. 8g from seeds & nuts. 2g from premium whey.</p>
-    <div class="cta-buttons">
-      <a href="#shop">Shop Now</a>
-      <a href="#story">Learn Our Story</a>
-      <a href="#" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</a>
-    </div>
+    <div class="logo">🟢 Seeds & Nuts</div>
+    <nav>
+      <a href="#">Products</a>
+      <a href="#">Benefits</a>
+      <a href="#">Our Story</a>
+      <a href="#">Shop</a>
+    </nav>
   </header>
 
-  <section id="story">
-    <h2>Why We’re Different</h2>
-    <p>We believe protein should nourish more than your muscles — it should nourish your life. That’s why SEEDS&NUTS delivers clean, complete protein from real ingredients: 8g from seeds & nuts, 2g from premium whey. No fillers, no junk, no compromises.</p>
-  </section>
-
-  <section>
-    <h2>What’s Inside Matters</h2>
-    <p>Every bar starts with nutrient-dense seeds and heart-healthy nuts — pumpkin, chia, almonds, flax, cashew — blended with the purest whey protein. No added sugar. No soy. Nothing you can’t pronounce. We kept it simple, so your body gets what it deserves.</p>
-  </section>
-
-  <section>
-    <h2>Wherever You Go, Take Strength With You</h2>
-    <p>From the gym to the office, the trail to your kitchen — SEEDS&NUTS is made for how you really live. Lightweight. Clean. Powerful. Because life doesn’t slow down — and neither should your nutrition.</p>
-  </section>
-
-  <section id="shop">
-    <h2>Choose Your Pack</h2>
-    <p>• 12-Bar Box – Original Blend<br>• 12-Bar Box – Cocoa Crunch (Coming Soon)<br>• Sampler Pack – Try all flavors</p>
-    <div class="cta-buttons">
-      <button class="add-to-cart" onclick="addToCart('12-Bar Box – Original Blend')">Add to Cart</button>
-      <button class="checkout-button" onclick="payWithRazorpay()">Checkout</button>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>More Than Just A <span>Protein Bar</span></h1>
+      <p>Discover our revolutionary protein bars made with real nuts and seeds, delivering 8g of natural protein and essential nutrients in every bite.</p>
+      <div class="buttons">
+        <a href="#" class="shop-btn">Shop Now</a>
+        <a href="#" class="learn-btn">Learn More</a>
+      </div>
     </div>
+    <img src="https://i.imgur.com/N2sTjJv.png" alt="Product Image" class="hero-image" />
   </section>
 
-  <div class="cart" id="cart">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-  </div>
-
-  <div class="footer">
-    <a href="#story">About</a>
-    <a href="#">Ingredients</a>
-    <a href="#">Contact</a>
-    <a href="#">Instagram</a>
-    <p>Rooted in nature. Built for your strength.</p>
-  </div>
-
-  <script>
-    let cart = [];
-
-    function addToCart(item) {
-      cart.push(item);
-      document.getElementById('cart-count').innerText = cart.length;
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartItems = document.getElementById('cart-items');
-      cartItems.innerHTML = '';
-      cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerText = item;
-        cartItems.appendChild(li);
-      });
-    }
-
-    function toggleCart() {
-      const cartBox = document.getElementById('cart');
-      cartBox.classList.toggle('visible');
-    }
-
-    function payWithRazorpay() {
-      const options = {
-        key: 'YOUR_RAZORPAY_KEY_ID',
-        amount: 29900, // Amount in paise = ₹299.00
-        currency: 'INR',
-        name: 'SEEDS&NUTS',
-        description: 'Purchase of protein bars',
-        image: 'https://yourdomain.com/logo.png', // Optional
-        handler: function (response) {
-          alert('Payment Successful. Razorpay Payment ID: ' + response.razorpay_payment_id);
-        },
-        prefill: {
-          name: '',
-          email: '',
-          contact: ''
-        },
-        theme: {
-          color: '#1a1a1a'
-        }
-      };
-      const rzp = new Razorpay(options);
-      rzp.open();
-    }
-  </script>
+  <section class="section">
+    <h2>Why Choose Seeds & Nuts?</h2>
+    <p>Our protein bars are crafted with care to provide you with the best nutrition from nature's finest ingredients.</p>
+  </section>
 </body>
 </html>
